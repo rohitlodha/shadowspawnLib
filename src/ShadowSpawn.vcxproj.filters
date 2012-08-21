@@ -21,15 +21,6 @@
     <ClCompile Include="CShadowSpawnException.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Console.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="COptions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CParseOptionsException.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CWriter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -56,15 +47,6 @@
     <ClInclude Include="CShadowSpawnException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Console.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="COptions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CParseOptionsException.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CWriter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -80,9 +62,16 @@
     <ClInclude Include="Utilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Exports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="license.txt" />
-    <None Include="readme.txt" />
+    <ResourceCompile Include="ShadowSpawn.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

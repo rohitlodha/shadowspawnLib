@@ -27,15 +27,29 @@ class CShadowSpawnException
 {
 private:
     CString _message;
-
+	HRESULT _result;
 public: 
-    CShadowSpawnException::CShadowSpawnException(LPCTSTR message)
+    CShadowSpawnException::CShadowSpawnException(HRESULT result, const LPCTSTR message)
     {
-        _message.Append(message); 
+        _message.Append(message);
+		_result = result;
     }
-
+	CShadowSpawnException::CShadowSpawnException(DWORD result, const LPCTSTR message)
+    {
+        _message.Append(message);
+		_result = HRESULT_FROM_WIN32(result);
+    }
+	CShadowSpawnException::CShadowSpawnException(const LPCTSTR message)
+    {
+        _message.Append(message);
+		_result = HRESULT_FROM_WIN32(::GetLastError());
+    }
     LPCTSTR get_Message(void)
     {
         return _message; 
+    }
+	 HRESULT get_HResult(void)
+    {
+        return _result; 
     }
 };

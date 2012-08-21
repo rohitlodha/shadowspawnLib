@@ -1,22 +1,27 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <ItemGroup>
-        <SolutionToBuild Include=".\src\ShadowSpawn.sln"/>
-    </ItemGroup>
-    <Target Name="Build">
-        <MSBuild
-            Projects="@(SolutionToBuild)"
-            Properties="Platform=x64;Flavor=Release-W2K3;Configuration=Release-W2K3"
-            StopOnFirstFailure="true"
+  <ItemGroup>
+    <ProjectToBuild Include=".\src\ShadowSpawn.vcxproj"/>
+  </ItemGroup>
+  <Target Name="Build">
+    <MSBuild
+        Projects="@(ProjectToBuild)"
+        Properties="Platform=x64;Configuration=Release-W2K3"
+        StopOnFirstFailure="true"
             />
-        <MSBuild
-            Projects="@(SolutionToBuild)"
-            Properties="Platform=x86;Flavor=Release-W2K3;Configuration=Release-W2K3"
-            StopOnFirstFailure="true"
+    <MSBuild
+        Projects="@(ProjectToBuild)"
+        Properties="Platform=Win32;Configuration=Release-W2K3"
+        StopOnFirstFailure="true"
             />
-        <MSBuild
-            Projects="@(SolutionToBuild)"
-            Properties="Platform=x86;Flavor=Release-XP;Configuration=Release-XP"
-            StopOnFirstFailure="true"
+    <MSBuild
+        Projects="@(ProjectToBuild)"
+        Properties="Platform=x64;Configuration=Release-XP"
+        StopOnFirstFailure="true"
             />
-    </Target>
+    <MSBuild
+        Projects="@(ProjectToBuild)"
+        Properties="Platform=Win32;Configuration=Release-XP"
+        StopOnFirstFailure="true"
+            />
+  </Target>
 </Project>
